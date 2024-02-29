@@ -9,23 +9,17 @@
 int binary_tree_balance(const binary_tree_t *tree)
 {
 	int lr = 0, ll = 0;
-	binary_tree_t *new;
 
 	if (tree == NULL)
 		return (0);
-	new = malloc(sizeof(binary_tree_t));
-	if (new == NULL)
-		return (0);
-	new = tree;
-	while (tree)
+	if (tree->left != NULL || tree->left != NULL)
 	{
-		tree = tree->left;
-		ll += 1;
+		lr = binary_tree_balance(tree->right);
+		ll = binary_tree_balance(tree->left);
+		return (ll - lr);
 	}
-	while (new)
+	else
 	{
-		new = new->right;
-		lr += 1;
-	}
-	return (ll - lr);
+		return (binary_tree_balance(tree->left) - binary_tree_balance(tree->right));
+        }
 }
