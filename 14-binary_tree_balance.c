@@ -6,7 +6,7 @@
  * Return: 0 is tree is NULL else No of leaves
  */
 
-int binary_tree_balnace(const binary_tree_t *tree)
+int binary_tree_balance(const binary_tree_t *tree)
 {
 	int lr = 0, ll = 0;
 	binary_tree_t *new;
